@@ -1,0 +1,15 @@
+#Counts vowels in a word s=
+vowelcount = 0
+s = 'khwfhj'
+for letter in s:
+    if letter == 'a':
+        vowelcount += 1
+    elif letter == 'e':
+        vowelcount += 1
+    elif letter == 'i':
+        vowelcount += 1
+    elif letter == 'o':
+        vowelcount += 1
+    elif letter == 'u':
+        vowelcount += 1
+print("Number of vowels: " + str(vowelcount))
