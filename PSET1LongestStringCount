@@ -1,0 +1,12 @@
+s = 'azcbobobegghakl'
+count = 0
+current=''
+longest=''
+for n in range(len(s)):
+    if (s[n] >= s[n-1]):
+        current += s[n]
+    else:
+        current = s[n]
+    if len(current) > len(longest):
+        longest = current
+print("Longest substring in alphabetical order is: " + longest)
