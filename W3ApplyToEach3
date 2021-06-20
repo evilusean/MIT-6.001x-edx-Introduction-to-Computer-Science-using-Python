@@ -1,0 +1,3 @@
+def square(c):
+    return c**2
+applyToEach(testList, square)
