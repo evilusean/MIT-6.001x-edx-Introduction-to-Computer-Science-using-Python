@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Aug  1 23:06:37 2021
+
+@author: Shawn Temes
+"""
+import pylab as plt
+"""
+def retire(monthly, reate, terms):
+    savings= [0]
+    base = [0]
+    mRate = rate/12
+    for i in range(terms):
+        base+=1
+        savings += [savings[-1]*(1*mRate)+ monthly]
+    return base, savings
+needs fixing from MIT week7 final lecture
+labels and lines are color/shape coded based on rates, looks pretty
+"""
+def displayRetireWmonthsAndRates(monthlies, rates, terms):
+    plt.figure('RetireBoth')
+    plt.clf()
+    plt.xlim(30*12,40*12)
+    monthLabels=['r','b','g','k']
+    rateLabels=['-', 'o', '^']
+    for i in range(len(monthlies)):
+        monthly=monthlies[i]
+        monthLabel =monthLabels[i%len(monthLabels)]
+        for j in range(len(rates)):
+            rate=rates[j]
+            rateLabel= rateLabels[j%len(rateLabels)]
+            xvals,yvals=retire(monthly,rate,terms)
+            plt.plot(xvals,yvals,
+                     monthLabel+rateLabel,
+                     label='retire'+str(monthly)+':'\
+                             +str(int(rate*100)))
+            plt.legend(loc = 'upper left')
+displayRetireWmonthsAndRates([500,700,900,1100],[.03, .05, .07],40*12)
